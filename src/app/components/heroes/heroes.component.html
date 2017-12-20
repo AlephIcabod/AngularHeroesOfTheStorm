@@ -1,0 +1,21 @@
+<div class="row">
+    <h1 class="center">Heroes of the Storm</h1>
+    <app-loader *ngIf="!heroes"></app-loader>
+    <div class="col s12 m3" *ngFor="let heroe of heroes">
+      <div class="card">
+        <div class="card-image">
+          <img [src]="heroe.Icono">
+          <span class="card-title">{{heroe.Nombre}}</span>
+        </div>
+        <div class="card-content">
+          <p><strong>Fecha de creación: </strong>{{heroe.FechaCreacion|date}}</p>
+          <p><strong>Tipo de heroe: </strong> {{heroe.Tipo}}</p>
+          <p><strong>Rol del heroe: </strong> {{heroe.Rol}}</p>
+        </div>
+        <div class="card-action">
+          <a [routerLink]="['/heroe',heroe.Nombre]">Ver mas</a>
+        </div>
+      </div>
+    </div>
+
+  </div>

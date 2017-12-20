@@ -9,3 +9,13 @@
   min-height: 100vh;
 
 }
+
+main{
+  margin-top: 1em;
+}
+
+.column-wrapper{
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}

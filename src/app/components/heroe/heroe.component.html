@@ -1,0 +1,41 @@
+
+<app-loader *ngIf="!heroe&&!error"></app-loader>
+
+
+<div class="row" *ngIf="error">
+    <div class="col s12 m5">
+      <div class="card-panel red">
+        <span class="white-text">No se pudo recuperar información del heroe.
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+<div class="row" *ngIf="heroe &&!error">
+  <div class="col m4 s12 z-depth-4">
+    <h3 class="center">{{heroe.Nombre | uppercase}}</h3>
+    <div class="center">
+      <img class="center" [src]="heroe.Icono" alt="">
+      <p>
+        <strong>Fecha de creación: </strong> {{heroe.FechaCreacion |date}}
+      </p>
+      <p>
+        <strong>Rol o clase: </strong> {{heroe.Rol}}
+      </p>
+      <p>
+        <strong>Tipo: </strong> {{heroe.Tipo}}
+      </p>
+    </div>
+  </div>
+  <div class="col m7 s12 offset-m1">
+    <h3 class="center">Habilidades</h3>
+
+    <ul class="collapsible" data-collapsible="accordion">
+        <li  *ngFor="let habilidad of heroe.Habilidades">
+          <div class="collapsible-header">{{habilidad.Nombre}}</div>
+          <div class="collapsible-body"><span>{{habilidad.Descripcion}}</span></div>
+        </li>
+      </ul>
+  </div>
+</div>

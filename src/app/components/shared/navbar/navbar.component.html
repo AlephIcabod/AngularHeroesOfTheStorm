@@ -1,18 +1,15 @@
 <div class="navbar-fixed">
-  <nav class="black">
+  <nav class="blue">
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li>
-            <img href="#" src="assets/img/logo-wow.png" alt="logo" class="logo">
+            <a href=""><img href="#" src="assets/img/logo-wow.png" alt="logo" class="logo"></a>
         </li>
-        <li>
-          <a href="#">Home</a>
+        <li routerLinkActive="active">
+          <a [routerLink]="['home']">Home</a>
         </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Heroes</a>
+        <li routerLinkActive="active">
+          <a [routerLink]="['heroes']">Heroes</a>
         </li>
       </ul>
       <form class="right row">
